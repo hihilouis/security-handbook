@@ -15,10 +15,11 @@ body{
   border-style: none;
   display: flex;
   justify-content: space-between;
-  position: absolute;
+  position: fixed;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.08),rgba(0,0,0,0.08)50%), url(background.jpg);
   background-position: center;
   background-size: cover;
+  z-index: 100;
   background-repeat: no-repeat;
 }
 
@@ -79,11 +80,16 @@ body{
 .content {
   display: flex;
   width: 100%;
-  height: 100px;
-  top: 20vh;
+  height: 100%;
+  top: 10vh;
   position: absolute;
+  flex-direction: column;
 }
-
+.content__address {
+  display: flex;
+  position: relative;
+  margin-top: 30px;
+}
 .content__adress--homepage {
   display: flex;
   position: relative;
@@ -127,17 +133,22 @@ body{
   color: rgba(0, 0, 0, 0.58);
 }
 
-.content__main-content--value,
-.content__main-content--achivements {
+.content__main-content--value
+ {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+  font-size: 28px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.58);
 }
 
 .content__achivements {
-  position: relative;
+position: relative;
 width: 100%;
 display: flex;
 justify-content: center;
@@ -158,20 +169,19 @@ margin-top: 30px;
 
 .content__title {
   display: flex;
-  margin-top: 50px;
-  position: absolute;
+  margin-top: 30px;
+  position: relative;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
   font-size: 32px;
   line-height: 39px;
-  /* identical to box height */
   margin-left: 70px;
   color: rgba(0, 0, 0, 0.58);
 }
 
 .content__address {
-  width: 100%;
+  width: fit-content;
   display: flex;
   margin-left: 70px;
 }
@@ -196,16 +206,46 @@ margin-top: 30px;
 }
 
 .content__value {
-  width: 90%;
-  text-align: center;
+  width: 100%;
+
   margin: 35px 0;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  flex-wrap: nowrap;
+  color: #6C6C6C;
+}
+.content__value-topic {
+  text-align: center;
+}
+.content__value-main {
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  column-gap: 5vh;
+  position: relative;
 }
 
-.content__main-content--p1,
-.content__main-content--p2,
-.content__main-content--p3 {
-  margin-top: 20px;
+.value_main-p1,
+.value_main-p2,
+.value_main-p3,
+.value_main-p4 {
+  margin: 18px;
 }
+
+.value_main-p1 {
+  position: relative;
+  margin-left: 40px;
+}
+
+.content__value-topic {
+  margin-bottom: 20px;
+}
+
+
 
 .footer {
   position: fixed;
